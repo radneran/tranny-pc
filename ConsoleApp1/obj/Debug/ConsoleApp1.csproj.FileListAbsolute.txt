@@ -1,0 +1,12 @@
+c:\users\naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+c:\users\naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+c:\users\naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+c:\users\naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+c:\users\naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+c:\users\naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\Naren\Documents\Visual Studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\InTheHand.Net.Personal.dll
+C:\Users\Naren\Documents\Visual Studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\InTheHand.Net.Personal.xml
+C:\Users\Naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\Naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.ResolveComReference.cache
+C:\Users\Naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\NDde.dll
+C:\Users\Naren\documents\visual studio 2017\Projects\ConsoleApp1\ConsoleApp1\bin\Debug\MimeTypeMap.dll
