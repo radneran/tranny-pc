@@ -31,9 +31,9 @@ namespace ConsoleApp1
         private class BluetoothServer{
             Guid muid = new Guid("{28931028-9310-0000-0000-289310289310}");
             private Boolean listening;
-            BluetoothRadio br = BluetoothRadio.PrimaryRadio;
-            BluetoothListener bl;
-            BluetoothClient bc = new BluetoothClient();
+            BluetoothRadio btRadio = BluetoothRadio.PrimaryRadio;
+            BluetoothListener btListener;
+            BluetoothClient btClient;
             Stream ns;
 
             public BluetoothServer()
@@ -45,7 +45,7 @@ namespace ConsoleApp1
                 try
                 {
                     Console.WriteLine("Closing BluetoothClient");
-                    bc.Close();
+                    btClient.Close();
                 }
                 catch
                 {
@@ -55,17 +55,18 @@ namespace ConsoleApp1
 
             public void connectAsServer()
             {
-                if (br == null)
+                if (btRadio == null)
                 {
                     Console.WriteLine("Bluetooth not supported");
                     return;
                 }
-                if (br.Mode != RadioMode.Discoverable)
-                    br.Mode = RadioMode.Discoverable;
-                br.Mode = RadioMode.Connectable;
-                Console.WriteLine("BT device name: "+br.Name.ToString());
-                bl = new BluetoothListener(muid);
-                bl.Start();
+                if (btRadio.Mode != RadioMode.Discoverable)
+                    btRadio.Mode = RadioMode.Discoverable;              
+                Console.WriteLine("BT device name: "+btRadio.Name.ToString());
+                btListener = new BluetoothListener(muid);
+                btListener.ServiceName = "Tranny";
+                Console.WriteLine(btListener.ServiceName);
+                btListener.Start();
                 listening = true;
                 //  Thread t = new Thread(new ThreadStart(listenLoop));
                 listenLoop();
@@ -79,13 +80,14 @@ namespace ConsoleApp1
                     
                     try
                     {
-                        Console.WriteLine("ListenLoop activated");
-                        bc = bl.AcceptBluetoothClient();
-                        ns = bc.GetStream();
-                        if (bc.Connected)
+                        Console.WriteLine("ListenLoop activated ");
+                        btClient  = btListener.AcceptBluetoothClient();
+                        
+                        if (btClient.Connected)
                         {
-                            Console.WriteLine("Connected to " + bc.RemoteMachineName);
+                            Console.WriteLine("Connected to " + btClient.RemoteMachineName);
                         }
+                        ns = btClient.GetStream();
                         if (ns != null && ns.CanWrite)
                         {
                             var path = getFilePath();
